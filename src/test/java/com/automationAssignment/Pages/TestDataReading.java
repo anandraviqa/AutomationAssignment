@@ -25,6 +25,7 @@ public class TestDataReading {
 		fis.close();
 	}
 
+	//Method to read from Excel
 	public String getCellData(String sheetName, String colName, int rowNum) {
 		try {
 			int col_Num = -1;
