@@ -45,6 +45,7 @@ public class LoginPage extends HelperPage {
 	public void enterUsername(String username) {
 		takeScreenshotAs("enterUsername");
 		HelperPage.sleep(5);
+		emailTextField.clear();
 		emailTextField.sendKeys(username);
 		takeScreenshotAs("enterUsername2");
 	}

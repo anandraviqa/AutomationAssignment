@@ -30,6 +30,9 @@ public class ProductSearchPage extends HelperPage {
 	
 	@FindBy(xpath = "//android.widget.Button[@resource-id='add-to-cart-button']")
 	protected MobileElement addToCartButton;
+	
+	@FindBy(xpath = "//android.widget.TextView[@text='Proceed to Buy']")
+	protected MobileElement proceedToBuyButton;
 
 	public ProductSearchPage(AppiumDriver<MobileElement> driver) throws Exception {
 		super(driver);
@@ -47,7 +50,7 @@ public class ProductSearchPage extends HelperPage {
 	public void clickSearchTextbox(String productName) {
 		takeScreenshotAs("searchTextBox");
 		searchTextBox.click();
-		HelperPage.sleep(5);
+		HelperPage.sleep(10);
 		searchTextBox.sendKeys(productName);
 		driver.hideKeyboard();
 		takeScreenshotAs("searchTextBox2");
@@ -60,6 +63,7 @@ public class ProductSearchPage extends HelperPage {
 	@Step("Click on first suggested product from listing")
 	public void clickFirstSuggestionFromSearchBox(String ItemFromDropdown, String ItemSelection) {
 		takeScreenshotAs("firstSuggestedSearchClick");
+		HelperPage.sleep(10);
 		driver.findElement(By.xpath("//android.widget.TextView[@text='"+ItemFromDropdown+"']")).click();
 		takeScreenshotAs("firstSuggestedSearchClick2");
 		
@@ -87,6 +91,18 @@ public class ProductSearchPage extends HelperPage {
 		addToCartButton.click();
 		HelperPage.sleep(5);
 		takeScreenshotAs("selectItem2");
+	}
+	
+	@Step("Click on Cart icon button")
+	public void clickOnCartIcon() {
+		takeScreenshotAs("clickOnCartIcon");
+		driver.findElementByAccessibilityId("Cart").click();
+	}
+	
+	@Step("Click on Cart icon button")
+	public void clickOnProceedToBuy() {
+		takeScreenshotAs("clickOnProceedToBuy");
+		proceedToBuyButton.click();
 	}
 
 }

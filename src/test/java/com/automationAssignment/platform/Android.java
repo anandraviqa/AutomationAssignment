@@ -10,5 +10,5 @@ public class Android {
 	public static final String browserNameChrome = "Chrome";
 	public static final String appName = "Amazon_shopping.apk";
 	public static final String appPackage = "com.amazon.mShop.android.shopping";
-	public static final String appActivity = "com.amazon.mShop.splashscreen.StartupActivity";
+	public static final String appActivity = "com.amazon.mShop.sso.SigninPromptActivity";
 }

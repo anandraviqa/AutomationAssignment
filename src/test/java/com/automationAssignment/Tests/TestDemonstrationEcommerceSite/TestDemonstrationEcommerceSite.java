@@ -7,6 +7,7 @@ import com.automationAssignment.Pages.Login.LoginPage;
 import com.automationAssignment.Pages.ProductSearch.ProductSearchPage;
 import com.automationAssignment.Tests.TestBase;
 
+import org.openqa.selenium.By;
 import org.testng.annotations.BeforeTest;
 
 import ru.yandex.qatools.allure.annotations.Description;
@@ -76,6 +77,10 @@ public class TestDemonstrationEcommerceSite extends TestBase {
 		
 		HelperPage.closeButton();
 		searchProductPage.selectItemAfterScroll();
+		
+		searchProductPage.clickOnCartIcon();
+		
+		searchProductPage.clickOnProceedToBuy();
 		
 		HelperPage.sleep(5);
 		HelperPage.deviceOrientationChangeTest(270);
